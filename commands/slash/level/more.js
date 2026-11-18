@@ -35,7 +35,7 @@ module.exports = [
     const info = store.levelFromXp(u.xp);
     await interaction.reply({ embeds: [info("Next Level", `You need **${info.needed - info.currentXp} XP** more to reach Level **${u.level + 1}**.`)] });
   } },
-  { category: "level", data: new SlashCommandBuilder().setName("levelupnotify").setDescription("Enable/disable level-up DMs.").setBooleanOption((o) => o.setName("enabled").setDescription("Enabled").setRequired(true)), async execute(interaction) {
+  { category: "level", data: new SlashCommandBuilder().setName("levelupnotify").setDescription("Enable/disable level-up DMs.").addBooleanOption((o) => o.setName("enabled").setDescription("Enabled").setRequired(true)), async execute(interaction) {
     const enabled = interaction.options.getBoolean("enabled");
     store.setSetting(interaction.guild.id, `dm_${interaction.user.id}`, enabled);
     await interaction.reply({ embeds: [success("Level-Up DM", enabled ? "You'll get a DM on level up." : "DM disabled.")] });
