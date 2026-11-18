@@ -1,22 +1,29 @@
 {
   "name": "cooplevel",
-  "version": "1.0.0",
-  "description": "CoopLevel - Discord leveling and XP bot",
+  "version": "2.0.0",
+  "description": "CoopLevel — a modern slash-command Discord leveling and XP bot.",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
     "start": "node index.js",
-    "deploy": "node deploy-commands.js",
+    "deploy": "node deploy-commands.js --global",
     "register:guild": "node deploy-commands.js --guild",
+    "check:commands": "node deploy-commands.js --check",
     "dev": "node index.js"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   },
-  "keywords": ["discord", "bot", "levels", "xp", "cooplevel"],
+  "keywords": [
+    "discord",
+    "bot",
+    "levels",
+    "xp",
+    "cooplevel"
+  ],
   "license": "MIT",
-"dependencies": {
-    "discord.js": "^14.15.3",
+  "dependencies": {
+    "discord.js": "^14.28.1",
     "dotenv": "^16.4.5"
   }
 }
