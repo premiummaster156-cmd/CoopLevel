@@ -4,7 +4,6 @@ module.exports = {
   token: process.env.TOKEN,
   clientId: process.env.CLIENT_ID,
   devGuildId: process.env.DEV_GUILD_ID || null,
-  prefix: process.env.PREFIX || "!",
   ownerIds: (process.env.OWNER_IDS || "").split(",").map((s) => s.trim()).filter(Boolean),
   xpPerMessage: parseInt(process.env.XP_PER_MESSAGE, 10) || 5,
   xpCooldown: parseInt(process.env.XP_COOLDOWN, 10) || 60,
