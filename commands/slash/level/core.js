@@ -131,7 +131,7 @@ module.exports = [
     store.setSetting(interaction.guild.id, "xpPerMessage", amount);
     await interaction.reply({ embeds: [success("XP/Msg", `Set XP per message to **${amount}**.`)] });
   } },
-  { category: "level", data: new SlashCommandBuilder().setName("toggleleveling").setDescription("Enable/disable XP.").setBooleanOption((o) => o.setName("enabled").setDescription("Enabled").setRequired(true)).setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild), async execute(interaction) {
+  { category: "level", data: new SlashCommandBuilder().setName("toggleleveling").setDescription("Enable/disable XP.").addBooleanOption((o) => o.setName("enabled").setDescription("Enabled").setRequired(true)).setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild), async execute(interaction) {
     const enabled = interaction.options.getBoolean("enabled");
     store.setSetting(interaction.guild.id, "enabled", enabled);
     await interaction.reply({ embeds: [success("Leveling", enabled ? "Leveling is **enabled**." : "Leveling is **disabled**.")] });
